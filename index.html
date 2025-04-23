@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colloque - Accueil (Slider + Images Séparées)</title>
+  <!-- Lien vers la feuille de style -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body id="homepage">
+
+  <!-- ========== HEADER avec navigation ========== -->
+  <header>
+    <nav role="navigation" aria-label="Menu principal">
+      <div class="nav-header">
+        <img src="images/logo-rpm25.png" alt="Logo RPM25" class="logo-colloque">
+        <button class="nav-toggle" onclick="toggleMenu()" aria-label="Ouvrir/fermer le menu">
+          <span class="burger"></span>
+          <span class="burger"></span>
+          <span class="burger"></span>
+        </button>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="appel_a_communications.html">Appel à Communications</a></li>
+        <li><a href="dates_importantes.html">Dates Importantes</a></li>
+        <li><a href="organisation_comites.html">Organisation & Comités</a></li>
+        <li><a href="programme.html">Programme</a></li>
+        <li><a href="lieu.html">Lieu</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ========== CONTENU PRINCIPAL ========== -->
+  <main>
+
+    <!-- Slider fade -->
+    <div class="slider fade-slider">
+      <div class="slides">
+        <div class="slide active">
+          <img src="images/encg-fes.jpg" alt="ENCG Fès">
+        </div>
+        <div class="slide">
+          <img src="images/fes-ville.jpg" alt="Vue de Fès">
+        </div>
+        <div class="slide">
+          <img src="images/ancienne-edition.jpg" alt="Ancienne édition">
+        </div>
+      </div>
+      <div class="text-overlay">
+        <h2 class="typing">Bienvenue à RPM25</h2>
+        <p class="sous-titre">Colloque international sur la recherche et les pratiques managériales</p>
+        <p class="sous-titre">ENCG Fès | 15-16 Novembre 2025</p>
+      </div>
+      <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+      <button class="next" onclick="changeSlide(1)">&#10095;</button>
+      <div class="dots">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+      </div>
+    </div>
+
+    <!-- Conteneur principal -->
+    <div class="container">
+
+      <!-- Paragraphe d'introduction (sans titre) -->
+      <section class="fade-in-left">
+        <p>
+          La 5ᵉ édition du Colloque International « Recherche et Pratiques Managériales : Quels apports réciproques ? »
+          aura lieu le 15 novembre 2025 à l’ENCG Fès. Cet événement propose un espace d’échange et d’innovation 
+          pour tous les acteurs du management, académiques ou professionnels.
+        </p>
+      </section>
+
+      <!-- 1ère section : texte à gauche, image à droite -->
+      <section class="row fade-in-right">
+        <div class="col-text">
+          <h3 class="section-subtitle">Contexte du Colloque</h3>
+          <p>
+            Le management est un domaine en constante évolution, façonné par des dynamiques économiques,
+            technologiques et sociales complexes. Aujourd’hui, les entreprises et organisations doivent
+            composer avec la digitalisation, l’intelligence artificielle, la pression concurrentielle
+            et les nouvelles attentes des parties prenantes.
+          </p>
+          <p>
+            Ce colloque vise à réunir chercheurs, professionnels et experts pour analyser, échanger et
+            partager des approches innovantes permettant de mieux comprendre les mutations managériales
+            actuelles. Ainsi, cette édition se veut à la fois ambitieuse et pragmatique, 
+            favorisant le dialogue entre chercheurs, doctorants et professionnels de terrain.
+          </p>
+        </div>
+        <div class="col-image">
+          <figure>
+            <img src="images/ancienne-edition-1.jpg" alt="Cérémonie d’ouverture 4ᵉ édition">
+            <figcaption>Cérémonie d’ouverture (novembre 2024)</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- 2ème section : image à gauche, texte à droite -->
+      <section class="row fade-in-left reverse">
+        <div class="col-image">
+          <figure>
+            <img src="images/ancienne-edition-2.jpg" alt="Session plénière 4ᵉ édition">
+            <figcaption>Session plénière (novembre 2024)</figcaption>
+          </figure>
+        </div>
+        <div class="col-text">
+          <h3 class="section-subtitle">L’édition 2025 & Son Thème</h3>
+          <p>
+            Cette 5ᵉ édition explore les nouvelles stratégies de management, 
+            les pratiques émergentes en gestion, 
+            les modèles de gouvernance innovants, 
+            et l’intégration des technologies dans le management.
+          </p>
+          <p>
+            Elle ambitionne de créer un pont entre la recherche académique et les besoins concrets 
+            des organisations, en intégrant les dernières avancées en intelligence artificielle, 
+            big data et développement durable.
+          </p>
+          <p>
+            Les participants pourront échanger sur des études de cas pratiques, des retours d'expériences,
+            et des perspectives d'avenir afin de contribuer à l'évolution du management dans un contexte
+            de transformation rapide. 
+          </p>
+        </div>
+      </section>
+
+      <!-- Objectifs & Public Cible -->
+      <section class="row fade-in-right">
+        <div class="col-text">
+          <h3 class="section-subtitle">Objectifs & Public Cible</h3>
+          <ul>
+            <li>Créer un espace d’échange interdisciplinaire entre académiques et professionnels.</li>
+            <li>Favoriser la diffusion des connaissances à travers des communications scientifiques et des retours d’expérience.</li>
+            <li>Discuter des enjeux critiques du management contemporain.</li>
+            <li>Proposer des solutions concrètes et applicables aux défis organisationnels.</li>
+          </ul>
+          <p class="highlight">
+            Ouvert aux chercheurs, enseignants, doctorants et professionnels du management
+          </p>
+        </div>
+      </section>
+
+      <!-- Appel à Communications -->
+      <section class="fade-in-left">
+        <h3 class="section-subtitle">Appel à Communications</h3>
+        <p>
+          Pour plus de détails sur les thématiques et modalités de soumission, 
+          consultez la rubrique <a href="appel_a_communications.html">Appel à Communications</a>.
+        </p>
+      </section>
+
+      <!-- Section Organisateurs & Partenaires -->
+      <section class="sponsors-section fade-in-right">
+        <h3 class="section-subtitle">Organisateurs & Partenaires</h3>
+        <div class="sponsors-bar">
+          <div class="sponsors-container">
+            <!-- Organisateurs -->
+            <div class="sponsors-group">
+              <h4 class="sponsors-group-title">Organisateurs</h4>
+              <div class="logos">
+                <figure class="logo-item">
+                  <img src="images/logo-encg.png" alt="Logo ENCG">
+                  <figcaption>L'École Nationale de Commerce et de Gestion de Fès</figcaption>
+                </figure>
+                <figure class="logo-item">
+                  <img src="images/logo-armf.png" alt="Logo ARMF">
+                  <figcaption>Laboratoire de Recherche et d’Etudes en Management, Entrepreneuriat et Finance</figcaption>
+                </figure>
+                <figure class="logo-item">
+                  <img src="images/logo-cnam.png" alt="Logo CNAM">
+                  <figcaption>Le CNAM de Paris-Chaire de Comptabilité et de Contrôle de Gestion</figcaption>
+                </figure>
+                <figure class="logo-item">
+                  <img src="images/logo-iseor.png" alt="Logo ISEOR">
+                  <figcaption>Institut de Socio-Économie des Entreprises et des Organisations</figcaption>
+                </figure>
+              </div>
+            </div>
+            <!-- Partenaires -->
+            <div class="sponsors-group">
+              <h4 class="sponsors-group-title">Partenaires</h4>
+              <div class="logos">
+                <figure class="logo-item">
+                  <img src="images/logo-usmba.png" alt="Logo USMBA">
+                  <figcaption>Université Sidi Mohammed Ben Abdellah de Fès</figcaption>
+                </figure>
+                <figure class="logo-item">
+                  <img src="images/logo-cnrst.png" alt="Logo CNRST">
+                  <figcaption>Centre National pour la Recherche Scientifique et Technique</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div> <!-- /container -->
+
+  </main>
+
+  <footer>
+    <div class="footer-bottom">
+      <button class="back-to-top" onclick="scrollToTop()" aria-label="Revenir en haut">↑</button>
+      <p>© 2025 RPM25 – Tous droits réservés</p>
+    </div>
+  </footer>
+  
+  
+  
+  
+
+  <!-- Script principal -->
+  <script src="js/script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

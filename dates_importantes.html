@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colloque - Dates Importantes</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Barre de navigation (menu burger) -->
+  <nav>
+    <div class="nav-header">
+      <img src="images/logo-rpm25.png" alt="Logo RPM25" class="logo-colloque">
+      <button class="nav-toggle" onclick="toggleMenu()" aria-label="Menu">
+        <span class="burger"></span>
+        <span class="burger"></span>
+        <span class="burger"></span>
+      </button>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="appel_a_communications.html">Appel à Communications</a></li>
+      <li><a href="dates_importantes.html" class="active">Dates Importantes</a></li>
+      <li><a href="organisation_comites.html">Organisation & Comités</a></li>
+      <li><a href="programme.html">Programme</a></li>
+      <li><a href="lieu.html">Lieu</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+<!-- TITRE PRINCIPAL ANIMÉ -->
+<h1 class="page-title">Dates Importantes</h1>
+
+<!-- COMPTE À REBOURS J‑jours avant le colloque -->
+<p class="countdown-label">Temps restant avant l’ouverture du colloque</p>
+<div class="countdown-container">
+  <div class="countdown-box">
+    <span id="days" class="value">0</span>
+    <small class="label">Jours</small>
+  </div>
+  <div class="countdown-box">
+    <span id="hours" class="value">00</span>
+    <small class="label">Heures</small>
+  </div>
+  <div class="countdown-box">
+    <span id="minutes" class="value">00</span>
+    <small class="label">Minutes</small>
+  </div>
+  <div class="countdown-box">
+    <span id="seconds" class="value">00</span>
+    <small class="label">Secondes</small>
+  </div>
+</div>
+
+  <!-- Conteneur principal -->
+  <div class="container">
+
+    <!-- Introduction -->
+    <section class="fade-in-left">
+      <p>
+        Retrouvez ci-dessous les principales échéances liées à la soumission des 
+        communications et au déroulement du colloque. Merci de respecter ces dates 
+        afin de garantir une organisation optimale de l’événement.
+      </p>
+    </section>
+
+    <!-- Grille de dates importantes -->
+    <section class="dates-grid fade-in-right">
+      <!-- Carte 1 -->
+      <div class="date-card">
+        <h3>20 septembre 2025</h3>
+        <p>Soumission des communications complètes</p>
+      </div>
+      <!-- Carte 2 -->
+      <div class="date-card">
+        <h3>20 octobre 2025</h3>
+        <p>Retour des avis du comité scientifique</p>
+      </div>
+      <!-- Carte 3 -->
+      <div class="date-card">
+        <h3>30 octobre 2025</h3>
+        <p>Date limite de réception des communications modifiées</p>
+      </div>
+      <!-- Carte 4 -->
+      <div class="date-card">
+        <h3>15 novembre 2025</h3>
+        <p>Ouverture du colloque</p>
+      </div>
+    </section>
+
+  </div> <!-- Fin .container -->
+
+  <!-- Script pour l'animation et le menu burger -->
+  <script src="js/script.js"></script>
+</body>
+</html>
+
+
+
+
+
+

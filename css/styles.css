@@ -1,0 +1,1490 @@
+/* 
+  ==========================
+  1. Variables Couleurs
+  ==========================
+*/
+:root {
+  --bleu-nav: #416b9b; 
+  --bleu-marine: #275180; 
+  --rouge-profond: #A51C30;
+  --gris-clair: #F8F8F8;
+  --gris-anthracite: #333333;
+}
+
+/*
+  ==========================
+  2. Réglages Généraux
+  ==========================
+*/
+html, body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  background-color: #fff; 
+  color: var(--gris-anthracite);
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Texte justifié par défaut */
+p, li {
+  text-align: justify;
+}
+
+/* Supprime marges par défaut sur figure et h3.section-subtitle */
+figure, h3.section-subtitle {
+  margin: 0;
+  padding: 0;
+}
+
+/* Container principal */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Sections avec marge */
+section {
+  margin: 40px 0;
+}
+
+/* 
+  ==========================
+  NAVIGATION (DESKTOP + BURGER)
+  ==========================
+*/
+
+/* Barre de navigation - Desktop */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--bleu-nav);
+  padding: 5px;
+  box-shadow: 0 2px 5px rgba(22, 21, 21, 0.1);
+  z-index: 999;
+  display: flex;
+  align-items: center;  
+  justify-content: space-between; /* pour séparer logo et bouton à droite */
+  box-sizing: border-box;
+}
+
+/* Conteneur du logo + bouton burger */
+.nav-header {
+  display: flex;
+  align-items: center;
+}
+
+/* Logo colloque */
+.logo-colloque {
+  height: 65px;
+  margin-right: 15px;
+}
+
+/* Bouton burger - caché sur grand écran */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.burger {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  margin: 5px;
+  transition: 0.4s;
+}
+
+/* Liste de liens - horizontale par défaut (desktop) */
+.nav-links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+/* Chaque li (desktop) */
+.nav-links li {
+  margin: 0 28px;
+}
+
+/* Les liens */
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  color: var(--rouge-profond);
+}
+
+/* 
+  ==========================
+  Slider Fade
+  ==========================
+*/
+.fade-slider {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 700px; /* Ajustez si besoin */
+  border: 2px solid var(--rouge-profond);
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.fade-slider .slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.fade-slider .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.fade-slider .slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.fade-slider .slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.text-overlay {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.5);
+  padding: 20px 30px;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  width: 80%; /* Ajout d'une largeur maximale pour mobile */
+  max-width: 600px; /* Limite la largeur sur grands écrans */
+}
+
+.text-overlay h2 {
+  font-size: 50px;
+  margin: 0;
+  color: var(--rouge-profond);
+}
+
+/* On force le centrage du texte dans le slider */
+.text-overlay h2,
+.text-overlay p {
+  text-align: center !important;
+}
+
+.sous-titre {
+  font-size: 24px;
+  margin: 8px 0;
+  text-align: center;
+}
+
+/* Boutons navigation du slider */
+.prev, .next {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.prev {
+  left: 10px;
+}
+.next {
+  right: 10px;
+}
+
+.dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background: white;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* 
+  ==========================
+  Row Alterné (si besoin)
+  ==========================
+*/
+.row {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+.col-text, .col-image {
+  flex: 1 1 50%;
+  min-width: 0;
+}
+
+.col-image {
+  text-align: center;
+}
+
+.col-image img {
+  width: 90%;
+  max-width: 400px;
+  border-radius: 5px;
+  border: 3px solid var(--rouge-profond);
+}
+
+.col-image figcaption {
+  font-style: italic;
+  color: #555;
+  margin-top: 8px;
+}
+
+/* 
+  ==========================
+  Section Titles
+  ==========================
+*/
+.section-subtitle {
+  margin: 0 0 10px 0;
+  font-size: 24px;
+  display: inline-block;
+  position: relative;
+  color: var(--bleu-marine);
+  font-weight: bold;
+}
+.section-subtitle::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--rouge-profond);
+}
+
+.highlight {
+  background: var(--rouge-profond);
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+/* 
+  ==========================
+  Animations Intersection Observer
+  ==========================
+*/
+.fade-in-left, .fade-in-right {
+  opacity: 0;
+  transform: translateX(0);
+  transition: all 0.8s ease;
+}
+.fade-in-left {
+  transform: translateX(-50px);
+}
+.fade-in-right {
+  transform: translateX(50px);
+}
+.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* 
+  ==========================
+  Section Sponsors
+  ==========================
+*/
+
+
+.sponsors-bar {
+  background-color: var(--gris-clair); 
+  border: 4px solid var(--rouge-profond);
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.sponsors-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.sponsors-group {
+  padding: 10px 0;
+}
+
+.sponsors-group-title {
+  background-color: var(--rouge-profond);
+  color: #fff;
+  font-size: 28px;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: nowrap;
+}
+
+.logo-item {
+  display: inline-block;
+  text-align: center;
+}
+
+.logo-item img {
+  max-width: 150px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.8;
+}
+
+.logo-item img:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.logo-item figcaption {
+  font-size: 12px;
+  color: var(--gris-anthracite);
+  margin-top: 5px;
+}
+
+/* 
+  ==========================
+  Téléchargement Argumentaire
+  ==========================
+*/
+.telecharger-argumentaire {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.red-box {
+  display: inline-block;
+  background-color: var(--rouge-profond);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.red-box a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.red-box a:hover {
+  opacity: 0.9;
+}
+
+/* 
+  ==========================
+  Grille & Cartes des Dates Importantes
+  ==========================
+*/
+.dates-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 40px; 
+  justify-content: center;
+}
+
+.date-card {
+  background-color: #fff;
+  border: 2px solid var(--rouge-profond);
+  border-radius: 8px;
+  padding: 20px;
+  width: 270px;
+  text-align: center; 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.date-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.date-card h3 {
+  color: var(--rouge-profond);
+  margin: 0 0 5px 0;
+  font-size: 22px;
+  font-weight: bold; 
+}
+
+.date-card p {
+  margin: 0;
+  font-size: 16px;
+  color: var(--gris-anthracite);
+  text-align: center !important;
+  font-weight: bold;
+}
+
+/* 
+  ==========================
+  Comités (Honneur, Organisation)
+  ==========================
+*/
+.committee-grid {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.no-wrap {
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.committee-card {
+  background-color: #fff;
+  border: 2px solid var(--rouge-profond);
+  border-radius: 8px;
+  padding: 20px;
+  width: 250px; 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.committee-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.committee-card img {
+  width: 100%;
+  height: 250px;       
+  object-fit: cover;   
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.committee-card h3 {
+  color: var(--rouge-profond);
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.committee-card p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--gris-anthracite);
+  margin-top: 5px;
+}
+
+/* 
+  ==========================
+  RUBRIQUE "LIEU" : STYLE SUPPLÉMENTAIRE
+  ==========================
+*/
+.place-container {
+  width: 100%;
+  margin: 40px 0; 
+  text-align: left;
+}
+
+/* Titre "Localisation" (centré) */
+.localisation-title {
+  text-align: center;
+  font-size: 24px;
+  color: var(--bleu-marine);
+  margin-bottom: 20px;
+}
+
+/* Encapsule la carte pour la centrer */
+.map-wrapper {
+  text-align: center;
+  margin-bottom: 30px; 
+}
+
+/* Carte centrée, occupant 80% de la largeur */
+.map-frame {
+  display: inline-block;
+  width: 80%;
+  max-width: 800px;
+  height: 450px;
+  border: 2px solid var(--rouge-profond);
+  border-radius: 5px;
+}
+
+.info-text {
+  text-align: left; 
+  margin-top: 10px;
+}
+
+/* QR code centré (bloc 300x300) */
+.qr-box {
+  width: 300px;
+  height: 300px;
+  margin: 20px auto; 
+  border: 2px solid var(--rouge-profond);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.qr-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 
+  ==========================
+  RUBRIQUE "CONTACT"
+  ==========================
+*/
+.contact-block {
+  margin-top: 40px;
+  border: 2px solid var(--rouge-profond);
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.contact-block-title {
+  margin-top: 0;
+  font-size: 20px;
+  color: var(--bleu-marine);
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.contact-info {
+  margin: 0;
+  font-size: 16px;
+  color: var(--gris-anthracite);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.contact-placeholder {
+  border: 2px dashed var(--gris-anthracite);
+  border-radius: 5px;
+  padding: 15px;
+  margin-top: 20px;
+  background-color: #f9f9f9;
+}
+
+.contact-placeholder em {
+  color: #666;
+}
+
+/* 
+  ==========================
+  RESPONSIVE DESIGN
+  (max-width: 768px)
+  ==========================
+*/
+@media screen and (max-width: 768px) {
+
+  /* 
+    BOUTON BURGER AFFICHÉ, 
+    LA LISTE DE LIENS MASQUÉE PAR DÉFAUT 
+  */
+  .nav-toggle {
+    display: block;
+  }
+
+  /* On masque la liste sur mobile, 
+     puis on l'affiche quand .nav-active est présent */
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px; /* sous la barre */
+    left: 0;
+    width: 100%;
+    background-color: var(--bleu-nav);
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+  }
+
+  /* Quand la classe .nav-active est ajoutée via JS, on affiche */
+  .nav-links.nav-active {
+    display: flex;
+  }
+
+  /* Ajustement des li en colonne */
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  /* On ajuste le nav pour un alignement horizontal 
+     (logo + burger) mais on ne le met plus en left:0, height:100%. */
+  nav {
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: 5px 10px;
+  }
+
+  /* SLIDER moins haut sur mobile */
+  .fade-slider {
+    margin-top: 70px; /* pour laisser la place à la nav */
+    height: 400px;
+  }
+
+  .text-overlay {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .text-overlay h2 {
+    font-size: 28px; 
+  }
+
+  .sous-titre {
+    font-size: 16px; 
+    line-height: 1.3;
+  }
+
+  /* Row en flex-wrap pour empiler les colonnes */
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .reverse {
+    flex-direction: row-reverse;
+  }
+
+  .col-text, .col-image {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .col-image img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* On conserve le texte justifié sur mobile */
+  p, li {
+    text-align: justify !important;
+    word-break: break-word;
+    hyphens: auto;
+  }
+
+  /* Sponsors (logos) en plusieurs lignes */
+  .logos {
+    flex-wrap: wrap;
+  }
+
+  .logo-item {
+    width: 45%;
+    margin-bottom: 15px;
+  }
+
+  /* Dates importantes : cartes en colonne */
+  .dates-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .date-card {
+    width: 90%;
+    max-width: 320px;
+    margin-bottom: 15px;
+  }
+
+  /* Comités : cartes en colonne */
+  .committee-grid {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .committee-card {
+    width: 90%;
+    max-width: 300px;
+    margin-bottom: 20px;
+  }
+
+  /* Map Google plus petite */
+  .map-frame {
+    width: 100%;
+    height: 300px;
+  }
+
+  /* QR code plus petit */
+  .qr-box {
+    width: 200px;
+    height: 200px;
+  }
+
+  /* Titre de section plus petit */
+  .section-subtitle {
+    font-size: 20px;
+    width: 100%;
+    display: block;
+  }
+
+  /* Container pleine largeur */
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    margin-top: 0 !important;
+  }
+}
+
+/* 
+  ==========================
+  RESPONSIVE DESIGN
+  (max-width: 480px)
+  ==========================
+*/
+@media screen and (max-width: 480px) {
+  /* On peut encore réduire le slider si on veut */
+  .fade-slider {
+    margin-top: 70px; /* Laisse la place à la nav */
+    height: 300px;
+  }
+
+  .text-overlay h2 {
+    font-size: 24px;
+  }
+
+  .sous-titre {
+    font-size: 14px;
+  }
+
+  .sponsors-group-title {
+    font-size: 20px;
+  }
+
+  .logo-item img {
+    max-width: 100px;
+  }
+
+  .logo-item figcaption {
+    font-size: 10px;
+  }
+}
+
+/* 
+  ==========================
+  CORRECTION POUR LA BARRE FIXE
+  ==========================
+  On ajoute un espace en haut du contenu pour compenser la nav fixed,
+  pour TOUS les écrans.
+*/
+body {
+  /* Ajuste la valeur selon la hauteur réelle de ta nav */
+  padding-top: 56px;
+}
+/* Ajuste la valeur selon la hauteur réelle de ta barre */
+body {
+  padding-top: 56px;
+}
+
+/* On enlève ce padding-top pour la page d’accueil 
+   (repérée grâce à id="homepage") */
+#homepage {
+  padding-top: 0;
+}
+
+/* Sur mobile, tu avais un margin-top pour le slider 
+   qu'on supprime également sur la page d’accueil */
+@media screen and (max-width: 768px) {
+  #homepage .fade-slider {
+    margin-top: 0;
+  }
+}
+/* ── Grille unique pour Organisateurs & Partenaires ── */
+.sponsors-group .logos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;            /* espacement uniforme entre boîtes */
+  align-items: stretch;   /* chaque boîte fait la hauteur de la plus grande */
+}
+
+/* ── Boîtes logo + légende ── */
+.sponsors-group .logo-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centre verticalement l’image + texte */
+  align-items: center;     /* centre horizontalement */
+  padding: 1rem;
+  background-color: #fff;
+  border: 2px solid var(--bleu-marine); /* couleur des sous-titres */
+  border-radius: 8px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ── Logos : même taille max, ratio conservé ── */
+.sponsors-group .logo-item img {
+  max-height: 80px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 0.5rem;    /* espace réduit vers la légende */
+}
+
+/* ── Légendes centrées ── */
+.sponsors-group .logo-item figcaption {
+  margin: 0;
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.3;
+  color: var(--gris-anthracite);
+}
+
+/* ── Léger relief au survol ── */
+.sponsors-group .logo-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+/* Footer minimal */
+.footer-bottom {
+  background-color: var(--bleu-nav);   /* même bleu que la navbar */
+  display: flex;
+  align-items: center;
+  justify-content: center;             /* centre horizontalement bouton + texte */
+  gap: 20px;                            /* espace entre la flèche et le texte */
+  padding: 12px 0;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: #fff;
+  font-size: 13px;
+  font-weight: normal;
+}
+
+.back-to-top {
+  background: none;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  color: #fff;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.back-to-top:hover {
+  background-color: #fff;
+  color: var(--bleu-nav);
+}
+/* ── Typing moderne lettre par lettre ── */
+
+/* Chaque lettre est invisible par défaut */
+.text-overlay h2.typing span {
+  opacity: 0;
+  display: inline-block; /* pour que translateY fonctionne */
+}
+
+/* Animation : la lettre remonte et fond en 0.5s */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ── Autoriser la conservation des espaces dans les spans ── */
+.text-overlay h2.typing span {
+  white-space: pre; /* préserve les espaces insécables (&nbsp;) */
+}
+
+/* ── Animation : chaque lettre remonte et fond ── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* TITRE PRINCIPAL ANIMÉ */
+.page-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 60px 0 5px;            /* 60px au‑dessus, 5px en dessous */
+  background: linear-gradient(
+    90deg,
+    #416b9b,
+    #275180,
+    #A51C30,
+    #416b9b
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: gradientMove 5s ease-in-out infinite;
+}
+
+/* Keyframes du dégradé */
+@keyframes gradientMove {
+  0%   { background-position: 0%   center; }
+  50%  { background-position: 100% center; }
+  100% { background-position: 0%   center; }
+}
+
+/* Règle ciblée pour réduire la marge‑haut de la première section */
+.page-title + .container > section:first-of-type {
+  margin-top: 5px !important;    /* remplace les 40px par 5px */
+}
+/*  ── Réduire la marge du tout premier <section> de la page ── */
+.container > section:first-of-type {
+  /* remplace 40px 0 par 5px au‑dessus et au‑dessous */
+  margin: 5px 0 !important;
+}
+/* ── BOUTON TÉLÉCHARGER ANIMÉ ── */
+.download-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--rouge-profond);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s;
+}
+
+.download-btn:hover {
+  background: #8e1a28;
+}
+
+.download-btn .icon {
+  display: inline-block;
+  transition: transform 0.3s;
+}
+
+/* Icône qui tourne pendant le téléchargement */
+.download-btn.loading .icon {
+  animation: spin 1s linear infinite;
+}
+
+/* Texte “Ouvrir” qui apparaît après téléchargement */
+.download-btn.done .text {
+  content: "Ouvrir l’Argumentaire";
+}
+
+/* Optionnel : changer icône en “check” quand c’est fait */
+.download-btn.done .icon svg {
+  /* remplacer flèche par coche */
+  display: none;
+}
+.download-btn.done .icon::before {
+  content: "✔";
+  font-size: 1.2rem;
+  color: #fff;
+  display: inline-block;
+}
+
+/* Animation rotation */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+/* ── STYLE DU COMPTE À REBOURS ── */
+.countdown-container {
+  text-align: center;
+  margin: 10px 0 20px;          /* espace entre titre et timer, puis entre timer et contenu */
+}
+
+#countdown {
+  display: inline-block;
+  background: var(--bleu-marine);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+#countdown span {
+  margin: 0 6px;
+}
+/* ── COMPTE À REBOURS STYLÉ ── */
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 10px 0 30px;
+}
+
+.countdown-box {
+  background: var(--bleu-marine);
+  color: #fff;
+  padding: 16px 12px;
+  border-radius: 8px;
+  min-width: 80px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.countdown-box .value {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.countdown-box .label {
+  display: block;
+  font-size: 0.85rem;
+  margin-top: 4px;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+/* ── Libellé du countdown ── */
+.countdown-label {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--gris-anthracite);
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 12px;
+  opacity: 0.85;
+}
+
+/* ── Boîtes colorées ── */
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+/* Couleurs distinctes pour chaque case */
+.countdown-box:nth-child(1) { background: var(--rouge-profond); }   /* Jours */
+.countdown-box:nth-child(2) { background: var(--bleu-marine); }     /* Heures */
+.countdown-box:nth-child(3) { background: #FFB347; }                /* Minutes (orangé) */
+.countdown-box:nth-child(4) { background: #4CAF50; }                /* Secondes (vert) */
+
+.countdown-box {
+  color: #fff;
+  padding: 18px 14px;
+  border-radius: 10px;
+  min-width: 80px;
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.countdown-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}
+
+.countdown-box .value {
+  display: block;
+  font-size: 2.4rem;
+  font-weight: 700;
+  animation: pulseValue 1.5s infinite ease-in-out;
+}
+
+.countdown-box .label {
+  display: block;
+  font-size: 0.85rem;
+  margin-top: 4px;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+/* Petite mise en avant animée du chiffre */
+@keyframes pulseValue {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.1); }
+}
+
+
+/* ── ICÔNE CALENDRIER DERRIÈRE LE TITRE ── */
+.page-title {
+  position: relative;
+}
+.page-title .title-svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 220px;
+  height: 220px;
+  transform: translate(-50%, -50%) rotate(0deg);
+  opacity: 0.08;
+  pointer-events: none;
+  animation: rotateCal 30s linear infinite;
+  z-index: -1;
+}
+@keyframes rotateCal {
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* ── TIMELINE SKELETON ── */
+.timeline-placeholder {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 32px 0;
+}
+.timeline-day {
+  background: #f9f9f9;
+  border: 2px dashed var(--rouge-profond);
+  border-radius: 8px;
+  padding: 16px;
+  width: 160px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.timeline-day .date {
+  font-weight: bold;
+  color: var(--bleu-marine);
+  margin-bottom: 8px;
+}
+.timeline-day .content {
+  color: var(--gris-anthracite);
+  font-size: 0.95rem;
+  position: relative;
+}
+.timeline-day .content::before {
+  content: "";
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.7), transparent);
+  animation: shimmer 1.8s infinite;
+}
+@keyframes shimmer {
+  to { left: 100%; }
+}
+
+/* ── SOCIAL ICONS (adapté UIVERSE) ── */
+.example-2 { display: flex; justify-content: center; align-items: center; gap: 12px; }
+.example-2 .icon-content { position: relative; }
+.example-2 .icon-content .tooltip {
+  position: absolute; top: -32px; left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--bleu-nav);
+  color: #fff; padding: 6px 10px; border-radius: 4px;
+  font-size: 14px; white-space: nowrap;
+  opacity: 0; visibility: hidden;
+  transition: all 0.3s ease;
+}
+.example-2 .icon-content:hover .tooltip {
+  opacity: 1; visibility: visible; top: -48px;
+}
+.example-2 .icon-content a {
+  display: flex; justify-content: center; align-items: center;
+  width: 50px; height: 50px; border-radius: 50%;
+  position: relative; overflow: hidden;
+  color: var(--gris-anthracite);
+  background-color: #fff; transition: all 0.3s ease-in-out;
+}
+.example-2 .icon-content a:hover { box-shadow: 0 0 20px rgba(0,0,0,0.1); color: #fff; }
+.example-2 .icon-content a svg { position: relative; z-index: 1; width: 24px; height: 24px; }
+.example-2 .icon-content a .filled {
+  position: absolute; bottom: 0; left: 0; width: 100%; height: 0;
+  transition: all 0.3s ease-in-out;
+}
+/* SURVOL : la couleur monte */
+.example-2 .icon-content a:hover .filled { height: 100%; }
+
+/* Couleurs par réseau */
+.example-2 a[data-social="website"] .filled,
+.example-2 a[data-social="website"] ~ .tooltip {
+  background-color: var(--bleu-marine);
+}
+.example-2 a[data-social="linkedin"] .filled,
+.example-2 a[data-social="linkedin"] ~ .tooltip {
+  background-color: #0274b3;
+}
+.example-2 a[data-social="instagram"] .filled,
+.example-2 a[data-social="instagram"] ~ .tooltip {
+  background: linear-gradient(45deg, #405de6, #5b51db, #b33ab4, #c135b4, #e1306c, #fd1f1f);
+}
+.example-2 a[data-social="facebook"] .filled,
+.example-2 a[data-social="facebook"] ~ .tooltip {
+  background-color: #1877f2;
+}
+/* ── Social icons : mise à jour “wow” ── */
+ul.example-2 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.example-2 .icon-content {
+  position: relative;
+}
+
+/* Tooltip inchangée */
+.example-2 .icon-content .tooltip {
+  position: absolute;
+  top: -32px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--bleu-nav);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+.example-2 .icon-content:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  top: -48px;
+}
+
+/* **Fonds colorés** par défaut + icônes blanches */
+.example-2 .icon-content a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--bleu-marine);
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effet “pop” et ombre au survol */
+.example-2 .icon-content a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Remplissage rouge lors du clic/survol */
+.example-2 .icon-content a .filled {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: var(--rouge-profond);
+  transition: height 0.3s ease-in-out;
+}
+.example-2 .icon-content a:hover .filled {
+  height: 100%;
+}
+
+/* Couleurs spécifiques (vous n’avez pas besoin de toucher) */
+.example-2 a[data-social="website"] .filled,
+.example-2 a[data-social="website"] ~ .tooltip {
+  background-color: var(--bleu-marine);
+}
+.example-2 a[data-social="linkedin"] .filled,
+.example-2 a[data-social="linkedin"] ~ .tooltip {
+  background-color: #0274b3;
+}
+.example-2 a[data-social="instagram"] .filled,
+.example-2 a[data-social="instagram"] ~ .tooltip {
+  background: linear-gradient(45deg,
+    #405de6, #5b51db, #b33ab4, #c135b4, #e1306c, #fd1f1f);
+}
+.example-2 a[data-social="facebook"] .filled,
+.example-2 a[data-social="facebook"] ~ .tooltip {
+  background-color: #1877f2;
+}
+
+/* ── 1) Bandeau “Suivez-nous” animé ── */
+.follow-banner {
+  background-color: var(--rouge-profond);
+  overflow: hidden;
+  white-space: nowrap;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.follow-text {
+  display: inline-block;
+  padding: 0 100%;            /* démarre hors-écran à droite */
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  animation: marquee 40s linear infinite;
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  95% {
+    transform: translateX(-100%);
+  }
+  100% {
+    /* retour rapide */
+    transform: translateX(100%);
+  }
+}
+
+
+/* ── 2) Liste horizontale sans puces ── */
+ul.example-2 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* ── 3) Icônes : fond bleu, icône blanche, pop on hover ── */
+.example-2 .icon-content a {
+  display: flex; justify-content: center; align-items: center;
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  position: relative; overflow: hidden;
+  background-color: var(--bleu-marine);
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.example-2 .icon-content a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* ── 4) Remplissage rouge (inchangé) ── */
+.example-2 .icon-content a .filled {
+  position: absolute; bottom: 0; left: 0;
+  width: 100%; height: 0;
+  background-color: var(--rouge-profond);
+  transition: height 0.3s ease-in-out;
+}
+.example-2 .icon-content a:hover .filled {
+  height: 100%;
+}
+
+/* ── 5) Couleur rouge profond pour “Site Web” ── */
+.example-2 a[data-social="website"] .filled,
+.example-2 a[data-social="website"] ~ .tooltip {
+  background-color: var(--rouge-profond);
+}
+
+/* ── 6) Autres réseaux (stable) ── */
+.example-2 a[data-social="linkedin"] .filled,
+.example-2 a[data-social="linkedin"] ~ .tooltip {
+  background-color: #0274b3;
+}
+.example-2 a[data-social="instagram"] .filled,
+.example-2 a[data-social="instagram"] ~ .tooltip {
+  background: linear-gradient(45deg,
+    #405de6,#5b51db,#b33ab4,#c135b4,#e1306c,#fd1f1f);
+}
+.example-2 a[data-social="facebook"] .filled,
+.example-2 a[data-social="facebook"] ~ .tooltip {
+  background-color: #1877f2;
+}
+/* ── Bandeau & Jump-in simplifié ── */
+.follow-banner {
+  background-color: var(--rouge-profond);
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* cache tout en-dehors */
+  margin-bottom: 16px;
+}
+
+.follow-text {
+  display: inline-block;
+  /* on enlève tout padding qui déporte le texte hors écran */
+  padding: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  /* démarre hors cadre */
+  transform: translateY(-100%);
+  animation: jumpIn 5s ease-in-out infinite;
+}
+
+@keyframes jumpIn {
+  0%, 100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  10%, 90% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

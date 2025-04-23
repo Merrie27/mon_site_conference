@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colloque - Lieu</title>
+  <!-- Lien vers votre feuille de style finale -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Barre de navigation (menu burger) -->
+  <nav>
+    <div class="nav-header">
+      <img src="images/logo-rpm25.png" alt="Logo RPM25" class="logo-colloque">
+      <button class="nav-toggle" onclick="toggleMenu()" aria-label="Menu">
+        <span class="burger"></span>
+        <span class="burger"></span>
+        <span class="burger"></span>
+      </button>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="appel_a_communications.html">Appel à Communications</a></li>
+      <li><a href="dates_importantes.html">Dates Importantes</a></li>
+      <li><a href="organisation_comites.html">Organisation & Comités</a></li>
+      <li><a href="programme.html">Programme</a></li>
+      <li><a href="lieu.html" class="active">Lieu</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+<!-- TITRE PRINCIPAL ANIMÉ -->
+<h1 class="page-title">Lieu</h1>
+
+  <!-- Conteneur principal (sans margin-top inline) -->
+  <div class="container">
+
+    <!-- 1) À propos de l’ENCG Fès -->
+    <section class="fade-in-left">
+      <h2 class="section-subtitle">À propos de l’ENCG Fès</h2>
+      <p>
+        L’École Nationale de Commerce et de Gestion de Fès (ENCG Fès) est un établissement 
+        d’enseignement supérieur affilié à l’Université Sidi Mohamed Ben Abdellah. 
+        Elle accueille la <strong>5ᵉ édition du Colloque International « Recherche et Pratiques Managériales : 
+        Quels apports réciproques ? »</strong>, offrant un cadre d’échange et d’innovation 
+        dans les domaines du management, du commerce et de la gestion.
+      </p>
+    </section>
+
+    <!-- 2) Localisation + Carte + Informations Pratiques -->
+    <section class="fade-in-right place-container">
+
+      <!-- Titre “Localisation” (centré) -->
+      <h2 class="localisation-title">Localisation</h2>
+
+      <!-- .map-wrapper pour centrer la carte -->
+      <div class="map-wrapper">
+        <iframe 
+          class="map-frame"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3303.310803633528!2d-4.9999999!3d34.0333333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd9f8b9280bf9a1d%3A0xb82f6e7815f41807!2sENCG%20F%C3%A8s!5e0!3m2!1sfr!2sma!4v9999999999999" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+
+      <!-- Sous-titre aligné à gauche -->
+      <h2 class="section-subtitle" style="margin-top:30px;">Informations Pratiques</h2>
+      <p class="info-text">
+        <strong>Adresse :</strong> Route Immouzer, Fès, Maroc<br>
+        <strong>Téléphone :</strong> 05 35 6-22932<br>
+        <strong>Email :</strong> 
+          <a href="mailto:communication.encg@usmba.ac.ma">communication.encg@usmba.ac.ma</a><br>
+      </p>
+
+
+<!-- Section “Suivez-nous” -->
+<section class="fade-in-left social-section">
+  <div class="follow-banner">
+    <span class="follow-text">Suivez-nous sur :</span>
+  </div>
+  <ul class="example-2">
+    <!-- Site Web -->
+    <li class="icon-content">
+      <a
+        href="https://www.encg.usmba.ac.ma/"
+        aria-label="Site Web ENCG Fès"
+        data-social="website"
+        target="_blank" rel="noopener"
+      >
+        <div class="filled"></div>
+        <!-- Icône “globe” stroke-only pour une meilleure visibilité -->
+        <svg xmlns="http://www.w3.org/2000/svg"
+             width="24" height="24"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="2"
+             stroke-linecap="round"
+             stroke-linejoin="round"
+             viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M2 12h20"></path>
+          <path d="M12 2a15 15 0 0 1 0 20"></path>
+        </svg>
+      </a>
+      <div class="tooltip">Site Web</div>
+    </li>
+    
+
+    <!-- LinkedIn -->
+    <li class="icon-content">
+      <a
+        href="https://www.linkedin.com/school/encg-fes/posts/?feedView=all"
+        aria-label="LinkedIn ENCG Fès"
+        data-social="linkedin"
+        target="_blank" rel="noopener"
+      >
+        <div class="filled"></div>
+        <!-- Icône LinkedIn -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+             class="bi bi-linkedin" viewBox="0 0 16 16">
+          <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708
+                   c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146z
+                   M4.943 13.394V6.169H2.542v7.225h2.401z
+                   M4.743 5.182c.837 0 1.358-.554 1.358-1.248
+                   -.015-.709-.52-1.248-1.342-1.248
+                   -.822 0-1.342.539-1.342 1.248
+                   0 .694.521 1.248 1.326 1.248h.000z
+                   M6.269 13.394h2.4V9.359
+                   c0-.216.016-.432.08-.586
+                   .173-.431.568-.878 1.232-.878
+                   .869 0 1.216.662 1.216 1.634v3.865h2.401
+                   V9.25c0-2.22-1.184-3.252-2.764-3.252
+                   -1.274 0-1.845.7-2.165 1.193
+                   v.025h-.016l.016-.025V6.169H6.269V13.394z"/>
+        </svg>
+      </a>
+      <div class="tooltip">LinkedIn</div>
+    </li>
+
+    <!-- Instagram -->
+    <li class="icon-content">
+      <a
+        href="https://www.instagram.com/encgfesusmba/"
+        aria-label="Instagram ENCG Fès"
+        data-social="instagram"
+        target="_blank" rel="noopener"
+      >
+        <div class="filled"></div>
+        <!-- Icône Instagram -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+             class="bi bi-instagram" viewBox="0 0 16 16">
+          <path d="M8 0C5.829 0 5.556.01 4.703.048
+                   3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923
+                   3.9 3.9 0 0 0-.923 1.417C.22 3.268.087 3.85.048 4.7
+                   .01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297
+                   .04.852.174 1.433.372 1.942.205.526.478.972.923 1.417
+                   .444.445.89.719 1.416.923.51.198 1.09.333 1.942.372
+                   .853.038 1.126.048 3.3.048s2.445-.01 3.298-.048
+                   c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923
+                   3.9 3.9 0 0 0 .923-1.417
+                   c.197-.509.332-1.09.372-1.942.038-.853.048-1.125.048-3.297
+                   s-.01-2.445-.048-3.298c-.04-.853-.174-1.434-.372-1.943
+                   a3.9 3.9 0 0 0-.923-1.416A3.9 3.9 0 0 0 13.24.42
+                   c-.509-.198-1.09-.332-1.943-.372C10.445.01 10.173 0 7.998 0
+                   zm0 1.442h.718c2.136 0 2.389.007 3.232.046
+                   .78.035 1.204.166 1.486.275.373.145.64.319.92.599
+                   s.453.546.598.92c.11.281.24.705.275 1.485
+                   .039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232
+                   c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919
+                   c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276
+                   -.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047
+                   c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598
+                   2.5 2.5 0 0 1-.6-.919c-.109-.282-.24-.705-.275-1.485
+                   -.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231
+                   c.036-.78.166-1.204.276-1.486a2.5 2.5 0 0 1 .923-1.417
+                   2.5 2.5 0 0 1 1.417-.923c.51-.197 1.092-.332 1.943-.372
+                   C5.556.01 5.827 0 8 0zm0 3.1a4.9 4.9 0 1 0 0 9.8
+                   4.9 4.9 0 0 0 0-9.8zm0 1.44
+                   a3.46 3.46 0 1 1 0 6.919 3.46 3.46 0 0 1 0-6.919zm4.48-.9
+                   a1.08 1.08 0 1 0 0 2.159 1.08 1.08 0 0 0 0-2.159"/>
+        </svg>
+      </a>
+      <div class="tooltip">Instagram</div>
+    </li>
+
+    <!-- Facebook -->  
+    <li class="icon-content">
+      <a
+        href="https://www.facebook.com/encg.usmba/"
+        aria-label="Facebook ENCG Fès"
+        data-social="facebook"
+        target="_blank" rel="noopener"
+      >
+        <div class="filled"></div>
+        <!-- Icône Facebook -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+             class="bi bi-facebook" viewBox="0 0 16 16">
+          <path d="M8.94 8.833v5.13H6.065V8.833H4.5V6.997h1.565V5.812
+                   c0-1.372.837-2.178 2.056-2.178h1.192v1.715H8.39
+                   c-.517 0-.749.308-.749.764V6.997h1.87l-.236 1.836H7.64z"/>
+        </svg>
+      </a>
+      <div class="tooltip">Facebook</div>
+    </li>
+  </ul>
+</section>
+
+    </section>
+
+  </div><!-- Fin .container -->
+
+  <!-- Script (IntersectionObserver, etc.) incluant la fonction toggleMenu -->
+  <script src="js/script.js"></script>
+</body>
+</html>
+
+
+
+
+
+  
