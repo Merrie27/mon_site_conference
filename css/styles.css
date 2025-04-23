@@ -1505,3 +1505,12 @@ ul.example-2 {
     margin: 0 auto;
   }
 }
+/* ── MOBILE (≤768px) : on retire les bordures des logos organisateurs/partenaires ── */
+@media screen and (max-width: 768px) {
+  .sponsors-group .logo-item {
+    border: none !important;
+  }
+  .sponsors-group .logo-item img {
+    border: none !important;
+  }
+}
