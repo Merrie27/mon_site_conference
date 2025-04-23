@@ -1490,28 +1490,16 @@ ul.example-2 {
 }
 
 
-/* ── MOBILE (≤768px) : une carte par ligne pour Organisateurs & Partenaires ── */
+/* ── MOBILE (≤768px) : logos organisateurs & partenaires 1 par ligne ── */
 @media screen and (max-width: 768px) {
-  /* Comité d’Organisation : colonne unique */
-  .committee-grid.no-wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;  /* chaque carte prend toute la largeur */
-    gap: 1rem;             /* espace vertical entre cartes */
-  }
-  .committee-grid.no-wrap .committee-card {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;             /* on gère l’espacement via gap */
-  }
-
-  /* Partenaires : une grille 1 colonne */
+  /* On cible uniquement la grille des logos */
   .sponsors-group .logos {
     display: grid !important;
     grid-template-columns: 1fr !important; /* une seule colonne */
-    gap: 1rem;
+    gap: 1rem;                             /* espace vertical */
   }
   .sponsors-group .logo-item {
+    /* chaque logo prend 100% de la largeur dispo */
     width: 100%;
     max-width: 100%;
     margin: 0 auto;
