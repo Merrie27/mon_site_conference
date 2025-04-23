@@ -1488,34 +1488,32 @@ ul.example-2 {
     opacity: 1;
   }
 }
-/* ── MOBILE (≤768px) : Organisateurs & Partenaires ── */
+
+
+/* ── MOBILE (≤768px) : une carte par ligne pour Organisateurs & Partenaires ── */
 @media screen and (max-width: 768px) {
-  /* 1) Organisateurs : 2 colonnes, espacement uniforme */
+  /* Comité d’Organisation : colonne unique */
   .committee-grid.no-wrap {
     display: flex;
-    flex-wrap: wrap !important;
-    justify-content: center;
-    gap: 1rem; /* espace entre cartes */
-    margin: 0 auto;
+    flex-direction: column;
+    align-items: stretch;  /* chaque carte prend toute la largeur */
+    gap: 1rem;             /* espace vertical entre cartes */
   }
   .committee-grid.no-wrap .committee-card {
-    /* 50% de largeur moins l’espace (2 % de marge de chaque côté) */
-    flex: 1 1 calc(50% - 1rem);
-    max-width: calc(50% - 1rem);
-    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;             /* on gère l’espacement via gap */
   }
 
-  /* 2) Partenaires : grille 2 colonnes avec boîtes plus petites */
+  /* Partenaires : une grille 1 colonne */
   .sponsors-group .logos {
     display: grid !important;
-    /* deux colonnes mini-200px maxi-1fr -> ici mini-120px pour mieux caser */
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)) !important;
+    grid-template-columns: 1fr !important; /* une seule colonne */
     gap: 1rem;
-    justify-items: center;
   }
   .sponsors-group .logo-item {
-    max-width: 120px;    /* empêche chaque logo de déborder */
     width: 100%;
-    margin: 0;
+    max-width: 100%;
+    margin: 0 auto;
   }
 }
